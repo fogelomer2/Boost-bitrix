@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta http-equiv="Content-Language" content="en-us">
+	<link rel="stylesheet" href="style.css"/>
+	<link rel="stylesheet" href="bitrix24-guide-style.css"/>
+    <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+    <meta name="ProgId" content="FrontPage.Editor.Document">
+	<title>bitrix24-guide</title>
+</head>
+<body>
+	<div class="main-wrap">
+		<div class="title-guide">Bitrix24 Application Design Guidelines</div>
+		<table class="guide-table">
+			<tr>
+				<td class="guide-td-l"><i class="guide-table-title">Visual
+                  Element</i></td>
+				<td class="guide-td-r"><i class="guide-table-title">Recommendation</i></td>
+			</tr>
+			<tr>
+				<td class="guide-td-l">
+					<div class="guide-hr">Buttons</div>
+					<div class="guide-btns-wrap">
+						<span class="bx-button">Button</span><span class="bx-button bx-button-accept">Button</span><span class="bx-button bx-button-decline ">Button</span>
+						<br/>
+                        <span class="bx-button bx-button-active">Button</span><span class="bx-button bx-button-accept bx-button-active">Button</span><span class="bx-button bx-button-decline bx-button-active">Button</span>
+					</div>
+					<div class="guide-btns-wrap">
+                        <span class="bx-button bx-button-small">Button</span><span class="bx-button bx-button-small bx-button-accept">Button</span><span class="bx-button bx-button-small bx-button-decline ">Button</span>
+						<br/>
+                        <span class="bx-button  bx-button-small bx-button-active">Button</span><span class="bx-button  bx-button-small bx-button-accept bx-button-active">Button</span><span class="bx-button bx-button-small bx-button-decline bx-button-active">Button</span>
+					</div>
+				</td>
+				<td class="guide-td-r">
+                    Use the green buttons to confirm user actions. Use the red
+                    buttons to cancel an operation or changes. It is not
+                    recommended to stud a page with too many colored buttons. A
+                    samples on the left illustrates the buttons in unpressed and
+                    pressed states. Hover the mouse pointer over any unpressed
+                    button to see how it looks in hover state.
+				</td>
+			</tr>
+			<tr>
+				<td class="guide-td-l">
+					<div class="guide-hr">Tabs</div>
+					<div class="bx-tabs-wrap">
+                        <span class="bx-tab">PropertiesUpdate History</span><span
+							class="bx-tab bx-tab-active">Discussion</span><span
+							class="bx-tab">Access</span>
+						<div class="bx-tabs-line"></div>
+					</div>
+				</td>
+				<td class="guide-td-r">
+                    The tab background color becomes more saturated when the
+                    mouse pointer hovers over it.
+				</td>
+			</tr>
+			<tr>
+				<td class="guide-td-l">
+					<div class="guide-hr"><span class="guide-hr-text">Text Input
+                      Controls</span></div>
+					<table class="bx-inputs-wrap">
+						<tr>
+							<td class="bx-input-td-l"><label class="bx-label-inp" for="inp_1">Old
+                              Password</label></td>
+							<td class="bx-input-td-r"><input class="bx-input" id="inp_1" type="text"/></td>
+						</tr>
+						<tr>
+							<td class="bx-input-td-l"><label class="bx-label-inp" for="inp_2">New
+                              Password</label></td>
+							<td class="bx-input-td-r"><input class="bx-input" id="inp_2" type="text"/></td>
+						</tr>
+						<tr>
+							<td class="bx-input-td-l"><label class="bx-label-inp" for="inp_3">New
+                              Login</label></td>
+							<td class="bx-input-td-r"><input class="bx-input" id="inp_3" type="text"/></td>
+						</tr>
+						<tr>
+							<td class="bx-input-td-l"></td>
+							<td class="bx-input-td-r">
+								<input type="checkbox" class="bx-checkbox" id="checkbox_1"/><label class="bx-label-checkbox" for="checkbox_1">Remember
+                                Me</label>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td class="guide-td-r">
+                    Common input controls have an inner shadow.
+				</td>
+			</tr>
+			<tr>
+				<td class="guide-td-l">
+					<div class="guide-hr">Colors</div>
+					<div class="guide-colors-wrap">
+						<span class="color fff"></span><span class="color e3ebed"></span><span class="color fdf9e5"></span><span class="color bee5f3"></span>
+						<br/>
+						<span class="color _93b81a"></span><span class="color d14545"></span><span class="color _49a7bf"></span><span class="color _2da4df"></span><span class="color da9309"></span><span class="color _5e6672"></span>
+					</div>
+					<div class="guide-text-block">
+                        <span style="font-size: 14px; color: #555;">Main text on
+                        white background: #555555</span>
+                        &nbsp;<span style="font-size: 12px; color: #999;"><br>
+                        Extra text on white background: #999999</span>
+                        &nbsp;<span style="font-size: 14px; font-weight: bold; color: #1f67b0;"><br>
+                        Link color on white background: #1f67b0</span>
+					</div>
+					<div class="guide-grey-block" style="background-color: #5e6672; color: #dbdfe7;">Main
+                      text on dark gray background: #dbdfe7</div>
+					<div class="guide-grey-block" style="background-color: #e3ebed; border: 1px solid #dadcde; color: #555;">Main
+                      text on gray background: - #e3ebed
+                      </div>
+				</td>
+				<td class="guide-td-r">
+                    Use light shades for backgrounds (see the first text line).
+                    <p>To highlight a text or an idea, use colors like in the
+                    third line.&nbsp;</p>
+                    <p>Use beige color (#fdf9e5) to display updates (new messages,
+                    comments, text blocks showing new information).</p>
+                    <p>Don't underline links, but rather accent them with a
+                    different color instead.</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="guide-td-l">
+					<div class="guide-hr">Font</div>
+					<img class="guide-font" src="images/font-img.png" alt="font"/>
+				</td>
+				<td class="guide-td-r">
+                    The font to use on iOS is Helvetica. The font to use on Windows
+                    is Arial.
+                    <p>All font styles are possible.</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="guide-td-l">
+					<div class="guide-hr">Headings</div>
+					<div style="background-color: #e3ebed; margin-top: 50px; padding: 1px 54px 60px;">
+						<h1>First level heading - 30px<span style="background-color: #FFFF00"></span></h1>
+						<div class="guide-text-wrap">
+                            <h2>Second level heading - 14px (bold)</h2>
+						</div>
+					</div>
+				</td>
+				<td class="guide-td-r">
+                    For headings, use the font size specified in the example on
+                    the left.
+				</td>
+			</tr>
+			<tr>
+				<td class="guide-td-l">
+					<div class="guide-hr">Popups and Floaters</div>
+					<div class="guide-popup-wrap-1">
+						<div class="bx-popup">
+                            Text Text Text
+						</div>
+						<div class="bx-popup bx-popup-grey">
+                            Text Text Text
+						</div>
+					</div>
+					<div class="guide-popup-wrap-2">
+						<div class="bx-popup bx-popup-menu">
+                            <a class="bx-popup-menu-item" href="#">My Account</a>
+                            <a class="bx-popup-menu-item bx-popup-menu-item-active" href="#">Edit
+                            Profile</a> <a class="bx-popup-menu-item" href="#">Log
+                            Out</a>
+						</div>
+					</div>
+					<div class="guide-popup-wrap-3">
+						<div class="bx-popup bx-popup-big">
+							<div class="bx-popup-header">
+                                Popup Title
+							</div>
+							<div class="bx-popup-content" style="height: 220px; width: 460px;"></div>
+							<div class="bx-popup-footer">
+                                <span class="bx-button bx-button-accept">Save</span>
+                                <span class="bx-button-decline-link">Cancel</span>
+							</div>
+						</div>
+					</div>
+				</td>
+				<td class="guide-td-r">
+                    Applications use the three popup window styles as shown in
+                    the example.
+                    <p>Use simple popups for short text messages and menus.</p>
+                    <p>Use popup windows with command buttons for dialog boxes.</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="guide-td-l">
+					<div class="guide-hr" style="margin-bottom: 45px;">Grids</div>
+					<div class="table-block-wrap">
+						<div class="table-wrap">
+							<table class="bx-table">
+								<tr class="bx-header-row">
+									<td class="bx-checkbox-td"><input type="checkbox" class="bx-checkbox"/></td>
+									<td class="bx-menu-td"><span class="bx-table-header-menu-btn"></span></td>
+									<td class="bx-name-td bx-sort-down">
+										<div class="bx-table-sorting-block">
+                                            Name
+										</div>
+									</td>
+									<td>
+										<div class="bx-table-sorting-block">
+                                            Size
+										</div>
+									</td>
+									<td class="bx-table-td bx-sort-up">
+										<div class="bx-table-sorting-block">
+											<span class="bx-sorting-name">Modified
+                                            by</span>
+										</div>
+									</td>
+									<td class="bx-table-td">
+										<div class="bx-table-sorting-block">
+                                            Modified on
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="bx-checkbox-td">
+										<input type="checkbox" class="bx-checkbox"/>
+									</td>
+									<td class="bx-menu-td">
+										<div class="bx-table-menu-btn"></div>
+									</td>
+									<td class="bx-name-td">
+										<span class="bx-file-name bx-icon-folder">
+											<span class="bx-file-icon"></span><a href="#" class="bx-file-text">MP3</a>
+										</span>
+									</td>
+									<td class="bx-table-td"></td>
+									<td class="bx-table-td"></td>
+									<td class="bx-table-td"></td>
+								</tr>
+								<tr>
+									<td class="bx-checkbox-td">
+										<input type="checkbox" class="bx-checkbox"/>
+									</td>
+									<td class="bx-menu-td">
+										<div class="bx-table-menu-btn"></div>
+									</td>
+									<td class="bx-name-td">
+										<span  class="bx-link bx-file-name bx-icon-file">
+											<span class="bx-file-icon"></span>
+											<a href="#" class="bx-file-text">presentation.dox</a>
+										</span>
+									</td>
+									<td class="bx-table-td">5 MB</td>
+									<td class="bx-table-td">Jhon Smith</td>
+									<td class="bx-table-td">10.05.2014</td>
+								</tr>
+								<tr>
+									<td class="bx-checkbox-td">
+										<input type="checkbox" class="bx-checkbox"/>
+									</td>
+									<td class="bx-menu-td">
+										<div class="bx-table-menu-btn"></div>
+									</td>
+									<td class="bx-name-td">
+										<span  class="bx-link bx-file-name bx-icon-img">
+											<span class="bx-file-icon"></span>
+											<a href="#" class="bx-file-text">photo.png</a>
+										</span>
+									</td>
+									<td class="bx-table-td bx-table-center">3 MB</td>
+									<td class="bx-table-td">Jhon Smith</td>
+									<td class="bx-table-td">10.05.2014</td>
+								</tr>
+							</table>
+							<div class="bx-table-footer">
+								<span class="bx-table-footer-info">Selected: 0</span><span class="bx-table-footer-info">Total: 16</span><span class="bx-table-footer-info">Page: 1</span>
+							</div>
+						</div>
+					</div>
+				</td>
+				<td class="guide-td-r">
+                    A common grid has a header and a footer, and an action
+                    toolbar on the top of it.
+                    <p>A custom action toolbar may be positioned on the bottom
+                    of the grid if required.</p>
+                    <p>Icons in grids must be 16 by 16 pixels.</p>
+				</td>
+			</tr>
+			<tr>
+				<td class="guide-td-l">
+					<div class="guide-hr" style="margin-bottom: 45px;">User Images</div>
+					<span class="userpic userpic-42"></span><span class="userpic userpic-37"></span><span class="userpic userpic-32"></span><span class="userpic userpic-30"></span><span class="userpic userpic-21"></span>
+				</td>
+				<td class="guide-td-r">
+                    User images must be 42x42, 37x37, 32x32,  30x30
+                    and  21x21 pixels.
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
