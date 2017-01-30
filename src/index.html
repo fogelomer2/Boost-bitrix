@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<!-- AngularJS -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"-->
+        <!--integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"-->
+        <!--crossorigin="anonymous"></script>-->
+
+<script src="//api.bitrix24.com/api/v1/"></script>
+<script src="app.js"></script>
+<script src="mainCtrl.js"></script>
+<body>
+
+<div ng-app="boostApp" ng-controller="mainCtrl" class="container">
+
+    {{itemList}}
+<div ng-repeat="item in itemList">
+    <label ng-bind="message.text"></label>
+    <input type="radio" ng-if="message.type == 1">
+    <input type="select" ng-if="message.type == 2">
+</div>
+
+</div>
+
+<script>
+    var config = {
+        apiKey: "AIzaSyA-IwujsvtzgDx30Jws1br-Ivq7sbX9YyA",
+        authDomain: "boost-e7338.firebaseapp.com",
+        databaseURL: "https://boost-e7338.firebaseio.com",
+        storageBucket: "boost-e7338.appspot.com",
+        messagingSenderId: "712453368075"
+    };
+    firebase.initializeApp(config);
+
+</script>
+
+</body>
+</html>
