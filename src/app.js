@@ -1,1 +1,1 @@
-var app = angular.module("boostApp", ["firebase"]);
+var app = angular.module("boostApp", ["firebase","ui.bootstrap-slider"]);
