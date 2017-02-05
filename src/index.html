@@ -42,7 +42,7 @@
 <body>
 
     <div ng-app="boostApp" ng-controller="mainCtrl" class="container">
-
+{{questions}}
         <form>
             <label>Header</label>
             <div ng-repeat="question in questions">
@@ -62,9 +62,10 @@
                     <slider min="0" max="1" step="1" tooltip="hide" ng-if="question.type == questionsTypesEnum.yesNo" ng-model="answers[$index]"></slider>
                 </div>
             </div>
-                <button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
+                <button type="button" class="btn btn-primary" ng-click="submit()">submit</button>
         </form>
-                <button type="button" class="btn btn-primary" ng-click="add()">Add</button>
+                
+        
         </div>
 
 
