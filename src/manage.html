@@ -31,40 +31,18 @@
 <link rel="stylesheet" href="libs/bootstrap-slider/bootstrap-slider.css">
 <!--<script src="//api.bitrix24.com/api/v1/"></script>-->
 <script src="app.js"></script>
-<script src="mainCtrl.js"></script>
+<script src="manageCtrl.js"></script>
 
 <style>
-    .slider-selection {
-        background: #BABABA;
-    }
+   
 </style>
 
 <body>
 
-    <div ng-app="boostApp" ng-controller="mainCtrl" class="container">
-        <form>
-            <label>Header</label>
-            <div ng-repeat="question in questions">
-                <div class="form-group">
-                    <label ng-bind="question.text"></label>
-                    <select class="form-control" ng-if="question.type == questionsTypesEnum.selectOptions" ng-model="answers[$index]">
-                <option ng-repeat="option in question.options" value="{{option}}">{{option}}</option>
-            </select>
-                </div>
-                <div class="form-group">
-                    <input type="text" ng-if="question.type == questionsTypesEnum.freeText" class="form-control" ng-model="answers[$index]" />
-                </div>
-                <div class="form-group">
-                    <slider min="0" max="5" step="1" tooltip="hide" ng-if="question.type == questionsTypesEnum.range" ng-model="answers[$index]"></slider>
-                </div>
-                <div class="form-group" style="width: 10%">
-                    <slider min="0" max="1" step="1" tooltip="hide" ng-if="question.type == questionsTypesEnum.yesNo" ng-model="answers[$index]"></slider>
-                </div>
-            </div>
-            <button type="button" class="btn btn-primary" ng-click="submit()">submit</button>
-        </form>
+    <div ng-app="boostApp" ng-controller="manageCtrl" class="container">
+       
 
-
+       
     </div>
 
 

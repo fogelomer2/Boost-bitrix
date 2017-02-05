@@ -1,4 +1,4 @@
-app.controller("mainCtrl", function ($scope, $firebaseObject, $firebaseArray) {
+app.controller("mainCtrl", function ($scope) {
 
     var config = {
         apiKey: "AIzaSyA-IwujsvtzgDx30Jws1br-Ivq7sbX9YyA",
@@ -10,28 +10,19 @@ app.controller("mainCtrl", function ($scope, $firebaseObject, $firebaseArray) {
 
     firebase.initializeApp(config);
 
-    var obj =
-        {
-            players: {
-                1: {
-                    tasks: [
+    $scope.questionsTypesEnum = {
+        yesNo: 1,
+        selectOptions: 2,
+        freeText: 3,
+        range: 4
+    };
 
-                    ],
-                    answers: []
-                }
-            }
-        }
+    $scope.answers = {}
 
-
-    // var tasks = {
-    //     taskId: 12
-
-    // }
-    //Fire: this is how to enter specific team  
-    var id = 1;
+    var playerId = 1;
     var taskId = 12;
-    //var database = firebase.database().ref("answers");//.child(id);
     $scope.questions = [];
+    
     function getQuestions() {
         var databaseTasks = firebase.database().ref("task");
         databaseTasks.once("value").then(function (res) {
@@ -41,72 +32,18 @@ app.controller("mainCtrl", function ($scope, $firebaseObject, $firebaseArray) {
                     $scope.questions = responseValue.questions;
                     $scope.$apply()
                 }
-
             })
         });
     }
+
     getQuestions()
 
-    function insertQuestions() {
-        var tasks = [{
-            taskId: 12,
-            title: 'practice2',
-            questions: [{
-                text: 'How was it',
-                type: 1
-            },
-            {
-                text: 'How you feel',
-                type: 2
-            }]
-        }]
-        var databaseTasks = firebase.database().ref("task");
-        databaseTasks.set(tasks).then(function (res) {
-            res;
-        });
-
-    }
-
-    //insertQuestions();
-
-    //Fire: this is how to set item with no weird firebase id 
-    // database.set(answer).then(function (res) {
-    //     res;
-    // });
-
-
-
-
-    // database.push(obj).then(function (res) {
-    //     res;
-    // })
-
-    // //Fire: get elem by name
-    // database.child("players").once("value").then(function (res) {
-    //     res;
-    // });
-
-
-    // $scope.questions = [
-    //     { text: 'Is', type: 1 },
-    //     { text: 'What', type: 2, options: ['true', 'false', 'yes', 'no'] },
-    //     { text: 'How', type: 3 },
-    //     { text: 'How Much', type: 4 },
-    // ];
-    $scope.questionsTypesEnum = {
-        yesNo: 1,
-        selectOptions: 2,
-        freeText: 3,
-        range: 4
-    };
-
     $scope.submit = function () {
-        $scope.answers = {}
-
-        let answer = {
-            playerId: id,
-            taskId: 12,
-            answers: $scope.answers
+        var answer = {
+            [playerId]: {
+                taskId: taskId,
+                answers: $scope.answers
+            }
         }
         var databaseAnswers = firebase.database().ref("answers");
         databaseAnswers.set(answer).then(function (res) {
