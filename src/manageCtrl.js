@@ -47,9 +47,9 @@ app.controller("manageCtrl", function ($scope) {
     // getQuestions()
 
     $scope.insertUsers = function () {
-//        let user = 
+        //        let user = 
         var databaseTeamPlayers = firebase.database().ref("team");//.child(id);//.child("tasks");
-        databaseTeamPlayers.set({userId :1}).then(function (res) {
+        databaseTeamPlayers.set({ userId: 1 }).then(function (res) {
             res;
         });
     }
@@ -64,7 +64,8 @@ app.controller("manageCtrl", function ($scope) {
             },
             {
                 text: 'How you feel',
-                type: 2
+                type: 2,
+                options: ['true', 'false', 'yes', 'no']
             }]
         }]
         var databaseTasks = firebase.database().ref("task");
@@ -74,7 +75,7 @@ app.controller("manageCtrl", function ($scope) {
 
     }
 
-    //insertQuestions();
+    $scope.insertQuestions();
 
     //Fire: this is how to set item with no weird firebase id 
     // database.set(answer).then(function (res) {

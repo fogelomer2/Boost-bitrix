@@ -47,8 +47,10 @@
             <div ng-repeat="question in questions">
                 <div class="form-group">
                     <label ng-bind="question.text"></label>
-                    <select class="form-control" ng-if="question.type == questionsTypesEnum.selectOptions" ng-model="answers[$index]">
-                <option ng-repeat="option in question.options" value="{{option}}">{{option}}</option>
+                    <select ng-options="option as option for option in question.options" ng-model="answers[$index]"
+                    ng-if="question.type == questionsTypesEnum.selectOptions"></select>
+                    <!--<select class="form-control" ng-if="question.type == questionsTypesEnum.selectOptions" ng-model="answers[$index]">
+                <option ng-repeat="option in question.options" value="{{option}}">{{option}}</option>-->
             </select>
                 </div>
                 <div class="form-group">
