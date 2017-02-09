@@ -22,15 +22,27 @@ app.controller("mainCtrl", function ($scope) {
     var playerId = 1;
     var taskId = 12;
     $scope.questions = [];
-    
+  $scope.questions = [
+                        { text: 'Is', type: 1 },
+                        { text: 'What', type: 2, options: ['true', 'false', 'yes', 'no'] },
+                        { text: 'How', type: 3 },
+                        { text: 'How Much', type: 4 },
+                    ];
     function getQuestions() {
         var databaseTasks = firebase.database().ref("task");
         databaseTasks.once("value").then(function (res) {
             var responseValues = res.val();
             responseValues.forEach(function (responseValue) {
                 if (responseValue.taskId == taskId) {
-                    $scope.questions = responseValue.questions;
-                    $scope.$apply()
+                    //Mark
+                    //$scope.questions = responseValue.questions;
+                    //$scope.$apply()
+                    $scope.questions = [
+                        { text: 'Is', type: 1 },
+                        { text: 'What', type: 2, options: ['true', 'false', 'yes', 'no'] },
+                        { text: 'How', type: 3 },
+                        { text: 'How Much', type: 4 },
+                    ];
                 }
             })
         });
