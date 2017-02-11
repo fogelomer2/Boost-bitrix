@@ -16,18 +16,13 @@ app.controller("mainCtrl", function ($scope) {
         freeText: 3,
         range: 4
     };
-
+    $scope.isSubmitted = false;
     $scope.answers = {}
 
     var playerId = 1;
     var taskId = 12;
     $scope.questions = [];
-  $scope.questions = [
-                        { text: 'Is', type: 1 },
-                        { text: 'What', type: 2, options: ['true', 'false', 'yes', 'no'] },
-                        { text: 'How', type: 3 },
-                        { text: 'How Much', type: 4 },
-                    ];
+    
     function getQuestions() {
         var databaseTasks = firebase.database().ref("task");
         databaseTasks.once("value").then(function (res) {
@@ -52,14 +47,16 @@ app.controller("mainCtrl", function ($scope) {
 
     $scope.submit = function () {
         var answer = {
-            [playerId]: {
-                taskId: taskId,
-                answers: $scope.answers
-            }
+            taskId: taskId,
+            answers: $scope.answers,
+            playerId: playerId
         }
+
         var databaseAnswers = firebase.database().ref("answers");
-        databaseAnswers.set(answer).then(function (res) {
+        databaseAnswers.push(answer).then(function (res) {
             res;
+            $scope.isSubmitted = true;
+            $scope.$apply()
         });
     }
 
