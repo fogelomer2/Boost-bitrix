@@ -1,5 +1,41 @@
 app.controller("mainCtrl", function ($scope) {
 
+
+    //Bitrix section
+
+
+    $scope.init = BX24.init(function () {
+        console.log('Bitrix agent is running')
+    });
+
+
+    $scope.get_users = BX24.callMethod('user.get', { sort: 'ID', order: 'ASC' }, function (result) {
+        if (result.error()) {
+            alert('Request error: ' + result.error());
+        }
+        else {
+            console.log(result.data());
+            if (result.more())
+                result.next();
+        }
+    });
+
+
+    $scope.get_task_data = BX24.callMethod(
+        'task.item.getdata',
+        [0],
+        function (result) {
+            console.info(result.data());
+            console.log(result);
+        }
+    );
+
+
+
+
+
+
+
     var config = {
         apiKey: "AIzaSyA-IwujsvtzgDx30Jws1br-Ivq7sbX9YyA",
         authDomain: "boost-e7338.firebaseapp.com",
@@ -22,7 +58,14 @@ app.controller("mainCtrl", function ($scope) {
     var playerId = 1;
     var taskId = 12;
     $scope.questions = [];
-    
+    //Mark
+    $scope.questions = [
+        { text: 'Is', type: 1 },
+        { text: 'What', type: 2, options: ['true', 'false', 'yes', 'no'] },
+        { text: 'How', type: 3 },
+        { text: 'How Much', type: 4 },
+    ];
+
     function getQuestions() {
         var databaseTasks = firebase.database().ref("task");
         databaseTasks.once("value").then(function (res) {
